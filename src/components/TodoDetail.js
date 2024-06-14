@@ -13,7 +13,7 @@ function TodoDetail({ todo, onEdit, onDelete }) {
   };
 
   return (
-    <div>
+    <dialog className='todo-modal' open>
       {isEditing ? (
         <div>
           <input
@@ -52,7 +52,10 @@ function TodoDetail({ todo, onEdit, onDelete }) {
           <button onClick={() => onDelete(todo.id)}>Delete</button>
         </div>
       )}
-    </div>
+      <form method='dialog'>
+        <button>Close</button>
+      </form>
+    </dialog>
   );
 }
 

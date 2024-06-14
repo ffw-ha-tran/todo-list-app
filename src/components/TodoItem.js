@@ -49,7 +49,7 @@ export default function TodoItem({
   }
 
   return (
-      <li onClick={onSelectedItem}>
+      <li onClick={() => onSelectedItem(id)}>
         <h2 className="title">{editableTitle}</h2>
         <div className="description">{editableDescription}</div>
         <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>

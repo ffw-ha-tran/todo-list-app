@@ -29,6 +29,7 @@ function App() {
   }
 
   const handleSelectedTodo = (id) => {
+    console.log(id);
     const todo = todos.find(todo => todo.id === id);
     setSelectedTodo(todo);
   }

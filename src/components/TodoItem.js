@@ -41,15 +41,15 @@ export default function TodoItem({
 
   if (isEditing) {
     editableTitle = (
-      <input type="text" defaultValue={isEditTitle} onChange={handleChangeTitle} required />
+      <input type="text" className="border rounded border-solid border-zinc-400 p-2" defaultValue={isEditTitle} onChange={handleChangeTitle} required />
     );
     editableDescription = (
-      <input type="text" defaultValue={isEditDescription} onChange={handleChangeDescription} required />
+      <input type="text" className="border rounded border-solid border-zinc-400 p-2" defaultValue={isEditDescription} onChange={handleChangeDescription} required />
     );
   }
 
   return (
-      <li onClick={() => onSelectedItem(id)} className="todo-item">
+      <li className="todo-item">
         <div className="todo-item-wrap">
         <div className="group-content">
           <h2 className="title text-xl font-bold text-cyan-800">{editableTitle}</h2>
@@ -58,6 +58,7 @@ export default function TodoItem({
         <div className="group-buttons">
           <button type="button" className="btn" onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
           <button type="button" className="btn" onClick={() => onItemDelete(id)}>Delete</button>
+          <button type="button" className="btn" onClick={() => onSelectedItem(id)}>Learn More</button>
         </div>
         </div>
       </li>

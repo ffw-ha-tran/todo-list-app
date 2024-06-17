@@ -43,8 +43,10 @@ function TodoDetail({ todo, onEdit, onDelete, show, onClose }) {
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </select>
-          <button className='btn' onClick={handleSave}>Save</button>
-          <button className='btn' onClick={() => setIsEditing(false)}>Cancel</button>
+          <div className='group-buttons'>
+            <button className='btn' onClick={handleSave}>Save</button>
+            <button className='btn' onClick={() => setIsEditing(false)}>Cancel</button>
+          </div>
         </div>
       ) : (
         <div>

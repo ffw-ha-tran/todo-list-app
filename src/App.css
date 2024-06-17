@@ -106,6 +106,12 @@ h1 {
 .group-content {
   width: 75%;
 }
+.group-content .title {
+  margin-bottom: 15px;
+}
+.group-content input {
+  width: 100%;
+}
 .group-buttons {
   width: 25%;
 }
@@ -136,4 +142,13 @@ h1 {
   font-size: 12px;
   text-align: center;
   background: #FFFFFF;
+}
+
+.todo-detail-edit-form input{
+  width: 100%;
+  margin-bottom: 15px;
+}
+.todo-detail-edit-form .group-buttons{
+  padding-top: 15px;
+  width: 100%;
 }

@@ -12,6 +12,12 @@ function TodoDetail({ todo, onEdit, onDelete, show, onClose }) {
     setIsEditing(false);
   };
 
+  const handleClose = (e) => {
+    e.preventDefault(); // Prevents form submission
+    onClose(); // Call onClose function passed from props
+  };
+
+
   return (
     <dialog className='todo-modal' open>
       {isEditing ? (
@@ -58,8 +64,8 @@ function TodoDetail({ todo, onEdit, onDelete, show, onClose }) {
           <button className='btn' onClick={() => onDelete(todo.id)}>Delete</button>
         </div>
       )}
-      <form method='dialog'>
-        <button className='btn-close'>X</button>
+      <form onSubmit={handleClose}>
+        <button type="submit" className='btn-close'>X</button>
       </form>
     </dialog>
   );

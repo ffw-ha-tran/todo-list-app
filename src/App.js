@@ -30,20 +30,20 @@ function App() {
 
   const handleSelectedTodo = (id) => {
     console.log(id);
-    if (selectedTodo && selectedTodo.id === id) {
-      setSelectedTodo(null); // Deselect if already selected
-    } else {
-      const todo = todos.find(todo => todo.id === id);
-      setSelectedTodo(todo);
-    }
+    const todo = todos.find(todo => todo.id === id);
+    setSelectedTodo(todo);
   }
+
+  const handleCloseModal = () => {
+    setSelectedTodo(null); // Close the modal
+  };
 
   return (
     <div className="App">
       <Header></Header>
       <AddTodo onAdd={handleAddTodo}></AddTodo>
       <TodoList todos={todos} onChanges={handleEditToDo} onDelete={handleDeleteTodo} onSelect={handleSelectedTodo}></TodoList>
-      {selectedTodo && <TodoDetail todo={selectedTodo} onEdit={handleEditToDo} onDelete={handleDeleteTodo}></TodoDetail>}
+      {selectedTodo && <TodoDetail todo={selectedTodo} onEdit={handleEditToDo} onDelete={handleDeleteTodo} onClose={handleCloseModal}></TodoDetail>}
     </div>
   );
 }

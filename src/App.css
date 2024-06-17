@@ -124,6 +124,8 @@ h1 {
   left: 0;
   right: 0;
   transform: translateY(-50%);
+  max-width: 700px;
+  width: 100%;
 }
 .todo-modal[open] {
   animation: slide-in-from-top 0.35s ease-out;

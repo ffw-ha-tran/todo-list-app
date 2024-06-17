@@ -49,11 +49,17 @@ export default function TodoItem({
   }
 
   return (
-      <li onClick={() => onSelectedItem(id)}>
-        <h2 className="title">{editableTitle}</h2>
-        <div className="description">{editableDescription}</div>
-        <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
-        <button onClick={() => onItemDelete(id)}>Delete</button>
+      <li onClick={() => onSelectedItem(id)} className="todo-item">
+        <div className="todo-item-wrap">
+        <div className="group-content">
+          <h2 className="title text-xl font-bold text-cyan-800">{editableTitle}</h2>
+          <div className="description">{editableDescription}</div>
+        </div>
+        <div className="group-buttons">
+          <button type="button" className="btn" onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
+          <button type="button" className="btn" onClick={() => onItemDelete(id)}>Delete</button>
+        </div>
+        </div>
       </li>
   );
 }

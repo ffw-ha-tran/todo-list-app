@@ -30,8 +30,12 @@ function App() {
 
   const handleSelectedTodo = (id) => {
     console.log(id);
-    const todo = todos.find(todo => todo.id === id);
-    setSelectedTodo(todo);
+    if (selectedTodo && selectedTodo.id === id) {
+      setSelectedTodo(null); // Deselect if already selected
+    } else {
+      const todo = todos.find(todo => todo.id === id);
+      setSelectedTodo(todo);
+    }
   }
 
   return (

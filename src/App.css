@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  padding: 30px;
+  position: relative;
 }
 
 .App-logo {
@@ -35,4 +36,104 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 8px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #F082AC;
+}
+.form-added {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-added input{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+.todo-list {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.todo-item {
+  list-style: none;
+}
+
+.todo-item-wrap {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+.group-content {
+  width: 75%;
+}
+.group-buttons {
+  width: 25%;
+}
+.todo-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: #d7fcf8;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.todo-modal[open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+.todo-modal::backdrop {
+  background: rgba(0, 0, 0, 0.9);
+}
+.btn-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border: 1px solid gray;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  background: #FFFFFF;
 }

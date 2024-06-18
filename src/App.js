@@ -20,8 +20,9 @@ function App() {
 
   const handleEditToDo = (newEditToDo) => {
     console.log(newEditToDo);
-    const newItems = todos.map(todo => todo.id === newEditToDo.id ? newEditToDo : todo);
+    const newItems = todos.map(todo => todo.id === newEditToDo.id ? { ...todo, ...newEditToDo } : todo);
     setTodos(newItems);
+    setSelectedTodo(newEditToDo);
   }
 
   const handleDeleteTodo = (id) => {
@@ -39,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${selectedTodo ? 'show-modal' : ''}`}>
       <Header></Header>
       <AddTodo onAdd={handleAddTodo}></AddTodo>
       <TodoList todos={todos} onChanges={handleEditToDo} onDelete={handleDeleteTodo} onSelect={handleSelectedTodo}></TodoList>
